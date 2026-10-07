@@ -15,9 +15,11 @@ body{font-family:Inter,Segoe UI,Arial,Helvetica,sans-serif;margin:0;color:#111;b
 .logo-name{font-family:'Parisienne',cursive;font-size:1.8rem;font-weight:400}
 nav a{margin-left:1rem;color:var(--muted);text-decoration:none}
 nav a:hover{color:var(--accent)}
-.hero{min-height:56vh;background-image:url('../../sprzataczka.jpg');background-size:cover;background-position:center;display:flex;align-items:center;position:relative}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.55),rgba(0,0,0,0.55));z-index:0}
-.hero-content{position:relative;color:#fff;padding:2.5rem 1rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0.6rem;z-index:1}
+.hero{min-height:56vh;background:#7C7E81;display:flex;align-items:center;position:relative}
+.hero-overlay{position:absolute;inset:0;background:transparent;z-index:0}
+.hero-layout{position:relative;z-index:1;display:flex;align-items:stretch;width:100%;min-height:56vh}
+.hero-image{display:block;align-self:stretch;width:32%;max-width:380px;flex:0 0 32%;object-fit:cover}
+.hero-content{position:relative;flex:1;min-width:0;color:#fff;padding:2.5rem clamp(1rem,5vw,4rem);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0.6rem}
 /* Slightly larger hero paragraph for emphasis */
 .hero-content p{font-size:1.125rem;line-height:1.4;margin:.35rem 0 0}
 .btn{background:var(--accent);color:#fff;padding:.6rem 1rem;border-radius:8px;text-decoration:none}
@@ -67,8 +69,10 @@ nav a:hover{color:var(--accent)}
 .form-error{color:#b91c1c}
 @media(max-width:700px){
   .site-header .container{flex-direction:column;align-items:flex-start}
-  .hero{min-height:44vh;padding:2rem}
-  .hero-content{padding:1.5rem 0}
+  .hero{min-height:44vh}
+  .hero-layout{min-height:44vh}
+  .hero-image{width:34%;flex-basis:34%}
+  .hero-content{padding:1.5rem 1rem}
   .contact-grid{grid-template-columns:1fr;}
   .contact-info{order:2}
 }
